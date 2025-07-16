@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang Get Key</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      margin-top: 30px;
+      font-size: 22px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Get Key Miễn Phí</h1>
+  <button onclick="getKey()">Lấy Key Ngay</button>
+  <div id="result"></div>
+
+  <script>
+    // 👉 Nhập danh sách key của bạn tại đây
+    const keyList = [
+      "KEY-ABC-123",
+      "KEY-DEF-456",
+      "KEY-GHI-789",
+      "KEY-JKL-000",
+      "KEY-MNO-111"
+    ];
+
+    function getKey() {
+      if (keyList.length === 0) {
+        document.getElementById("result").innerText = "Đã hết key!";
+        return;
+      }
+
+      // Lấy 1 key ngẫu nhiên
+      const randomIndex = Math.floor(Math.random() * keyList.length);
+      const selectedKey = keyList.splice(randomIndex, 1)[0]; // lấy và xóa
+
+      document.getElementById("result").innerText = "🎁 Key của bạn là: " + selectedKey;
+    }
+  </script>
+
+</body>
+</html>
